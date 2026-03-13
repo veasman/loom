@@ -1,0 +1,76 @@
+name = "ember"
+default_wallpaper = "default"
+
+font_ui = "FiraCode Nerd Font"
+font_mono = "FiraCode Nerd Font"
+
+font_size_ui = 11
+font_size_term = 13
+
+gap_px = 12
+border_width = 2
+default_mfact = 0.5
+
+bar_height = 24
+bar_outer_gap = 4
+sync_workspaces = true
+
+terminal_opacity = 0.95
+
+bg = "#16110f"
+bg_alt = "#1f1815"
+
+fg = "#f2e5d7"
+fg_muted = "#b59b85"
+
+accent = "#d97757"
+accent_fg = "#16110f"
+
+border_active = "#d97757"
+border_inactive = "#5a4339"
+
+workspace_current = "#d97757"
+workspace_occupied = "#b59b85"
+workspace_empty = "#6a5449"
+
+selection_bg = "#7c3f2b"
+selection_fg = "#ffffff"
+
+nvim_scheme = "material"
+nvim_variant = "deep ocean"
+nvim_transparent = true
+
+dunst_corner_radius = 8
+dunst_width = 360
+dunst_height = 120
+dunst_offset_x = 20
+dunst_offset_y = 20
+dunst_frame_width = 2
+dunst_timeout = 6
+
+picom_active_opacity = 1.0
+picom_inactive_opacity = 0.90
+picom_corner_radius = 12
+picom_round_borders = 1
+picom_shadow = true
+picom_shadow_opacity = 0.30
+picom_shadow_offset_x = -12
+picom_shadow_offset_y = -12
+
+color0 = "#2b211d"
+color1 = "#e67e5f"
+color2 = "#c2a56d"
+color3 = "#e0b36c"
+color4 = "#7fa7d6"
+color5 = "#d3869b"
+color6 = "#89b482"
+color7 = "#e8d8c3"
+
+color8 = "#6b5448"
+color9 = "#ff9c73"
+color10 = "#d8bd84"
+color11 = "#f2c97d"
+color12 = "#99bceb"
+color13 = "#e0a2b5"
+color14 = "#a2c89b"
+color15 = "#fff3e6"

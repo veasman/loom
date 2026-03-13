@@ -1,0 +1,76 @@
+name = "cloud"
+default_wallpaper = "default"
+
+font_ui = "FiraCode Nerd Font"
+font_mono = "FiraCode Nerd Font"
+
+font_size_ui = 11
+font_size_term = 13
+
+gap_px = 18
+border_width = 0
+default_mfact = 0.5
+
+bar_height = 28
+bar_outer_gap = 10
+sync_workspaces = true
+
+terminal_opacity = 0.80
+
+bg = "#f4faff"
+bg_alt = "#eaf4fb"
+
+fg = "#3b4d5c"
+fg_muted = "#8ea5b8"
+
+accent = "#8ecae6"
+accent_fg = "#f4faff"
+
+border_active = "#8ecae6"
+border_inactive = "#c8ddeb"
+
+workspace_current = "#8ecae6"
+workspace_occupied = "#9fbfd4"
+workspace_empty = "#c7dce8"
+
+selection_bg = "#bde0fe"
+selection_fg = "#405564"
+
+nvim_scheme = "catppuccin"
+nvim_variant = "latte"
+nvim_transparent = true
+
+dunst_corner_radius = 18
+dunst_width = 380
+dunst_height = 130
+dunst_offset_x = 24
+dunst_offset_y = 24
+dunst_frame_width = 2
+dunst_timeout = 6
+
+picom_active_opacity = 1.0
+picom_inactive_opacity = 0.98
+picom_corner_radius = 14
+picom_round_borders = 14
+picom_shadow = true
+picom_shadow_opacity = 0.24
+picom_shadow_offset_x = -10
+picom_shadow_offset_y = -10
+
+color0 = "#dbe7f0"
+color1 = "#d08770"
+color2 = "#a3be8c"
+color3 = "#ebcb8b"
+color4 = "#8ecae6"
+color5 = "#b48ead"
+color6 = "#88c0d0"
+color7 = "#3b4d5c"
+
+color8 = "#aabccc"
+color9 = "#bf616a"
+color10 = "#7cbf9e"
+color11 = "#f2d388"
+color12 = "#76b5d3"
+color13 = "#c9a7df"
+color14 = "#81c8dd"
+color15 = "#405564"

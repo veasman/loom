@@ -1,0 +1,76 @@
+name = "gruvbox"
+default_wallpaper = "default"
+
+font_ui = "FiraCode Nerd Font"
+font_mono = "FiraCode Nerd Font"
+
+font_size_ui = 11
+font_size_term = 13
+
+gap_px = 10
+border_width = 2
+default_mfact = 0.5
+
+bar_height = 22
+bar_outer_gap = 0
+sync_workspaces = true
+
+terminal_opacity = 0.95
+
+bg = "#1d2021"
+bg_alt = "#282828"
+
+fg = "#ebdbb2"
+fg_muted = "#a89984"
+
+accent = "#d79921"
+accent_fg = "#1d2021"
+
+border_active = "#d79921"
+border_inactive = "#504945"
+
+workspace_current = "#d79921"
+workspace_occupied = "#a89984"
+workspace_empty = "#665c54"
+
+selection_bg = "#458588"
+selection_fg = "#fbf1c7"
+
+nvim_scheme = "gruvbox"
+nvim_variant = "dark"
+nvim_transparent = true
+
+dunst_corner_radius = 6
+dunst_width = 360
+dunst_height = 120
+dunst_offset_x = 20
+dunst_offset_y = 20
+dunst_frame_width = 2
+dunst_timeout = 6
+
+picom_active_opacity = 1.0
+picom_inactive_opacity = 0.90
+picom_corner_radius = 0
+picom_round_borders = 0
+picom_shadow = false
+picom_shadow_opacity = 0.0
+picom_shadow_offset_x = 0
+picom_shadow_offset_y = 0
+
+color0 = "#282828"
+color1 = "#cc241d"
+color2 = "#98971a"
+color3 = "#d79921"
+color4 = "#458588"
+color5 = "#b16286"
+color6 = "#689d6a"
+color7 = "#a89984"
+
+color8 = "#928374"
+color9 = "#fb4934"
+color10 = "#b8bb26"
+color11 = "#fabd2f"
+color12 = "#83a598"
+color13 = "#d3869b"
+color14 = "#8ec07c"
+color15 = "#ebdbb2"
