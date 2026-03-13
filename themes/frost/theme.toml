@@ -1,4 +1,5 @@
 name = "frost"
+ui_mode = "dark"
 default_wallpaper = "default"
 
 font_ui = "FiraCode Nerd Font"
@@ -40,7 +41,7 @@ nvim_scheme = "oxocarbon"
 nvim_variant = "main"
 nvim_transparent = true
 
-dunst_corner_radius = 12
+dunst_corner_radius = 16
 dunst_width = 360
 dunst_height = 120
 dunst_offset_x = 20
@@ -56,6 +57,9 @@ picom_shadow = true
 picom_shadow_opacity = 0.25
 picom_shadow_offset_x = -12
 picom_shadow_offset_y = -12
+picom_fade_in_step = 0.05
+picom_fade_out_step = 0.05
+picom_fade_delta = 4
 
 color0 = "#1b2333"
 color1 = "#f7768e"
@@ -74,3 +78,10 @@ color12 = "#8db8ff"
 color13 = "#c6a0ff"
 color14 = "#89ddff"
 color15 = "#ffffff"
+
+rofi_width = 44
+rofi_padding = 12
+rofi_border_radius = 16
+rofi_lines = 8
+rofi_icon_size = 24
+rofi_element_spacing = 8

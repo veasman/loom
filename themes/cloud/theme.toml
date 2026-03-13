@@ -1,4 +1,5 @@
 name = "cloud"
+ui_mode = "dark"
 default_wallpaper = "default"
 
 font_ui = "FiraCode Nerd Font"
@@ -36,11 +37,12 @@ workspace_empty = "#c7dce8"
 selection_bg = "#bde0fe"
 selection_fg = "#405564"
 
-nvim_scheme = "catppuccin"
+# alt: catppuccin
+nvim_scheme = "dayfox"
 nvim_variant = "latte"
 nvim_transparent = true
 
-dunst_corner_radius = 18
+dunst_corner_radius = 16
 dunst_width = 380
 dunst_height = 130
 dunst_offset_x = 24
@@ -51,11 +53,14 @@ dunst_timeout = 6
 picom_active_opacity = 1.0
 picom_inactive_opacity = 0.98
 picom_corner_radius = 14
-picom_round_borders = 14
+picom_round_borders = 1
 picom_shadow = true
 picom_shadow_opacity = 0.24
 picom_shadow_offset_x = -10
 picom_shadow_offset_y = -10
+picom_fade_in_step = 0.05
+picom_fade_out_step = 0.05
+picom_fade_delta = 4
 
 color0 = "#dbe7f0"
 color1 = "#d08770"
@@ -74,3 +79,10 @@ color12 = "#76b5d3"
 color13 = "#c9a7df"
 color14 = "#81c8dd"
 color15 = "#405564"
+
+rofi_width = 44
+rofi_padding = 12
+rofi_border_radius = 14
+rofi_lines = 8
+rofi_icon_size = 24
+rofi_element_spacing = 8

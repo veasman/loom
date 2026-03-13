@@ -1,4 +1,5 @@
 name = "pink"
+ui_mode = "light"
 default_wallpaper = "default"
 
 font_ui = "FiraCode Nerd Font"
@@ -8,11 +9,11 @@ font_size_ui = 11
 font_size_term = 13
 
 gap_px = 18
-border_width = 3
+border_width = 4
 default_mfact = 0.5
 
 bar_height = 28
-bar_outer_gap = 10
+bar_outer_gap = 12
 sync_workspaces = true
 
 terminal_opacity = 0.80
@@ -36,26 +37,30 @@ workspace_empty = "#dcbccc"
 selection_bg = "#f7c6dc"
 selection_fg = "#5c4451"
 
-nvim_scheme = "catppuccin"
+# atl: catppucchin
+nvim_scheme = "dawnfox"
 nvim_variant = "latte"
 nvim_transparent = true
 
-dunst_corner_radius = 12
+dunst_corner_radius = 14
 dunst_width = 380
 dunst_height = 130
 dunst_offset_x = 24
 dunst_offset_y = 24
-dunst_frame_width = 2
+dunst_frame_width = 0
 dunst_timeout = 6
 
 picom_active_opacity = 1.0
 picom_inactive_opacity = 0.95
 picom_corner_radius = 14
-picom_round_borders = 14
+picom_round_borders = 1
 picom_shadow = true
-picom_shadow_opacity = 0.18
+picom_shadow_opacity = 0.28
 picom_shadow_offset_x = -10
 picom_shadow_offset_y = -10
+picom_fade_in_step = 0.05
+picom_fade_out_step = 0.05
+picom_fade_delta = 4
 
 color0 = "#e8d7e0"
 color1 = "#d98ca8"
@@ -74,3 +79,10 @@ color12 = "#bfd8f0"
 color13 = "#f2b9dd"
 color14 = "#bfe7e7"
 color15 = "#4f3a45"
+
+rofi_width = 44
+rofi_padding = 12
+rofi_border_radius = 18
+rofi_lines = 8
+rofi_icon_size = 24
+rofi_element_spacing = 8

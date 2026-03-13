@@ -1,4 +1,5 @@
 name = "gruvbox"
+ui_mode = "dark"
 default_wallpaper = "default"
 
 font_ui = "FiraCode Nerd Font"
@@ -49,13 +50,16 @@ dunst_frame_width = 2
 dunst_timeout = 6
 
 picom_active_opacity = 1.0
-picom_inactive_opacity = 0.90
+picom_inactive_opacity = 0.95
 picom_corner_radius = 0
 picom_round_borders = 0
 picom_shadow = false
 picom_shadow_opacity = 0.0
 picom_shadow_offset_x = 0
 picom_shadow_offset_y = 0
+picom_fade_in_step = 1.00
+picom_fade_out_step = 1.00
+picom_fade_delta = 1
 
 color0 = "#282828"
 color1 = "#cc241d"
@@ -74,3 +78,10 @@ color12 = "#83a598"
 color13 = "#d3869b"
 color14 = "#8ec07c"
 color15 = "#ebdbb2"
+
+rofi_width = 40
+rofi_padding = 8
+rofi_border_radius = 0
+rofi_lines = 8
+rofi_icon_size = 24
+rofi_element_spacing = 4

@@ -1,4 +1,5 @@
 name = "kawaii"
+ui_mode = "dark"
 default_wallpaper = "default"
 
 font_ui = "FiraCode Nerd Font"
@@ -50,12 +51,15 @@ dunst_timeout = 6
 
 picom_active_opacity = 1.0
 picom_inactive_opacity = 0.90
-picom_corner_radius = 24
+picom_corner_radius = 16
 picom_round_borders = 1
 picom_shadow = true
 picom_shadow_opacity = 0.22
 picom_shadow_offset_x = -12
 picom_shadow_offset_y = -12
+picom_fade_in_step = 0.05
+picom_fade_out_step = 0.05
+picom_fade_delta = 4
 
 color0 = "#2a1d33"
 color1 = "#f38ba8"
@@ -74,3 +78,10 @@ color12 = "#9ec1ff"
 color13 = "#ffd2f2"
 color14 = "#a8efe0"
 color15 = "#fff1f8"
+
+rofi_width = 44
+rofi_padding = 12
+rofi_border_radius = 16
+rofi_lines = 8
+rofi_icon_size = 24
+rofi_element_spacing = 8
