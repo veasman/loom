@@ -205,12 +205,12 @@ nvim_transparent = true
 
 rofi_width = {44 if light_mode else 40}
 rofi_padding = {12 if light_mode else 8}
-rofi_border_radius = {18 if light_mode else 6}
+rofi_border_radius = {14 if light_mode else 4}
 rofi_lines = 8
 rofi_icon_size = 24
 rofi_element_spacing = {8 if light_mode else 4}
 
-dunst_corner_radius = {18 if light_mode else 10}
+dunst_corner_radius = {14 if light_mode else 4}
 dunst_width = 380
 dunst_height = 130
 dunst_offset_x = 24
@@ -220,7 +220,7 @@ dunst_timeout = 6
 
 picom_active_opacity = 1.0
 picom_inactive_opacity = {0.95 if light_mode else 0.90}
-picom_corner_radius = {22 if light_mode else 12}
+picom_corner_radius = {14 if light_mode else 4}
 picom_round_borders = 1
 picom_shadow = true
 picom_shadow_opacity = {0.18 if light_mode else 0.25}

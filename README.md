@@ -162,7 +162,7 @@ loom derive <image> --name <theme>
 Example:
 
 ```
-loom derive ~/Pictures/wallpaper.png --name sakura
+loom derive ~/Pictures/wallpaper.png --name custom
 ```
 
 This will:

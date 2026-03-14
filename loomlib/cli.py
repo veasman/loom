@@ -322,7 +322,7 @@ def open_menu() -> int:
         if image_path is None:
             return 1
 
-        theme_name = prompt_text("Theme Name", "sakura")
+        theme_name = prompt_text("Theme Name", "custom")
         if theme_name is None:
             return 1
 
