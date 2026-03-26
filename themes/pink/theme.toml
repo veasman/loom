@@ -1,6 +1,6 @@
 name = "pink"
-ui_mode = "light"
 default_wallpaper = "default"
+ui_mode = "dark"
 
 font_ui = "FiraCode Nerd Font"
 font_mono = "FiraCode Nerd Font"
@@ -8,81 +8,93 @@ font_mono = "FiraCode Nerd Font"
 font_size_ui = 11
 font_size_term = 13
 
-gap_px = 18
-border_width = 4
+gap_px = 16
+border_width = 0
 default_mfact = 0.5
-
-bar_height = 28
-bar_outer_gap = 12
 sync_workspaces = true
+terminal_opacity = 0.88
 
-terminal_opacity = 0.80
+bg = "#161116"
+bg_alt = "#201720"
+fg = "#f6dff1"
+fg_muted = "#b892b2"
+accent = "#f29ccf"
+accent_soft = "#d67ab5"
+accent_fg = "#161116"
+border_active = "#f29ccf"
+border_inactive = "#4b3248"
+workspace_current = "#f29ccf"
+workspace_occupied = "#b892b2"
+workspace_empty = "#5d4359"
+selection_bg = "#6b2d57"
+selection_fg = "#ffffff"
 
-bg = "#fff7fb"
-bg_alt = "#ffeef6"
+vwm_bar_enabled = true
+vwm_bar_background = false
+vwm_bar_modules = "pill"
+vwm_bar_icons = true
+vwm_bar_colors = true
+vwm_bar_minimal = false
+vwm_bar_position = "top"
+vwm_bar_height = 28
+vwm_bar_radius = 18
+vwm_bar_margin_x = 18
+vwm_bar_margin_y = 10
+vwm_bar_content_margin_x = 8
+vwm_bar_content_margin_y = 2
+vwm_bar_gap = 18
+vwm_bar_padding_x = 12
+vwm_bar_padding_y = 6
+vwm_bar_volume_bar_enabled = true
+vwm_bar_volume_bar_width = 36
+vwm_bar_volume_bar_height = 8
+vwm_bar_volume_bar_radius = 10
 
-fg = "#4a3543"
-fg_muted = "#b38ea3"
-
-accent = "#f29fc2"
-accent_fg = "#fff7fb"
-
-border_active = "#f29fc2"
-border_inactive = "#e7bfd1"
-
-workspace_current = "#f29fc2"
-workspace_occupied = "#cfa5ba"
-workspace_empty = "#dcbccc"
-
-selection_bg = "#f7c6dc"
-selection_fg = "#5c4451"
-
-# atl: catppucchin
-nvim_scheme = "dawnfox"
-nvim_variant = "latte"
+nvim_scheme = "catppuccin"
+nvim_variant = "mocha"
 nvim_transparent = true
 
-dunst_corner_radius = 14
+dunst_corner_radius = 16
 dunst_width = 380
 dunst_height = 130
 dunst_offset_x = 24
 dunst_offset_y = 24
-dunst_frame_width = 0
+dunst_frame_width = 2
 dunst_timeout = 6
 
 picom_active_opacity = 1.0
-picom_inactive_opacity = 0.95
-picom_corner_radius = 14
+picom_inactive_opacity = 0.90
+picom_corner_radius = 16
 picom_round_borders = 1
 picom_shadow = true
-picom_shadow_opacity = 0.28
-picom_shadow_offset_x = -10
-picom_shadow_offset_y = -10
+picom_shadow_opacity = 0.24
+picom_shadow_offset_x = -12
+picom_shadow_offset_y = -12
 picom_fade_in_step = 0.05
 picom_fade_out_step = 0.05
 picom_fade_delta = 4
 
-color0 = "#e8d7e0"
-color1 = "#d98ca8"
-color2 = "#b8d3b6"
-color3 = "#f1c6a8"
-color4 = "#a7c7e7"
-color5 = "#e6a4cf"
-color6 = "#a8d8d8"
-color7 = "#4a3543"
+color0 = "#241a23"
+color1 = "#ff8fcf"
+color2 = "#a6d49f"
+color3 = "#f3c47e"
+color4 = "#f29ccf"
+color5 = "#d4a5ff"
+color6 = "#8de0d1"
+color7 = "#e7cfe2"
 
-color8 = "#c8b3bf"
-color9 = "#e7a8bf"
-color10 = "#c7e5c6"
-color11 = "#f7d9be"
-color12 = "#bfd8f0"
-color13 = "#f2b9dd"
-color14 = "#bfe7e7"
-color15 = "#4f3a45"
+color8 = "#6d5168"
+color9 = "#ffabd9"
+color10 = "#c0e7b9"
+color11 = "#ffd698"
+color12 = "#ffb6e1"
+color13 = "#e0b9ff"
+color14 = "#aaf0e5"
+color15 = "#fff4fc"
 
-rofi_width = 44
+rofi_width = 40
 rofi_padding = 12
-rofi_border_radius = 18
-rofi_lines = 8
+rofi_border_radius = 16
+rofi_lines = 14
 rofi_icon_size = 24
 rofi_element_spacing = 8

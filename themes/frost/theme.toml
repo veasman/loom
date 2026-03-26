@@ -1,6 +1,6 @@
 name = "frost"
-ui_mode = "dark"
 default_wallpaper = "default"
+ui_mode = "dark"
 
 font_ui = "FiraCode Nerd Font"
 font_mono = "FiraCode Nerd Font"
@@ -11,31 +11,44 @@ font_size_term = 13
 gap_px = 12
 border_width = 2
 default_mfact = 0.5
-
-bar_height = 24
-bar_outer_gap = 4
 sync_workspaces = true
-
 terminal_opacity = 0.95
 
 bg = "#0b1020"
 bg_alt = "#11182d"
-
 fg = "#d8e2ff"
 fg_muted = "#8a94b8"
-
 accent = "#7aa2f7"
+accent_soft = "#89ddff"
 accent_fg = "#0b1020"
-
 border_active = "#7aa2f7"
 border_inactive = "#3a4668"
-
 workspace_current = "#7aa2f7"
 workspace_occupied = "#8a94b8"
 workspace_empty = "#42506f"
-
 selection_bg = "#2a3f6f"
 selection_fg = "#ffffff"
+
+vwm_bar_enabled = true
+vwm_bar_background = false
+vwm_bar_modules = "pill"
+vwm_bar_icons = true
+vwm_bar_colors = true
+vwm_bar_minimal = false
+vwm_bar_position = "top"
+vwm_bar_height = 24
+vwm_bar_radius = 16
+vwm_bar_margin_x = 8
+vwm_bar_margin_y = 6
+vwm_bar_content_margin_x = 8
+vwm_bar_content_margin_y = 2
+vwm_bar_gap = 14
+vwm_bar_padding_x = 10
+vwm_bar_padding_y = 4
+vwm_bar_volume_bar_enabled = true
+vwm_bar_volume_bar_width = 34
+vwm_bar_volume_bar_height = 8
+vwm_bar_volume_bar_radius = 4
 
 nvim_scheme = "oxocarbon"
 nvim_variant = "main"
@@ -79,9 +92,9 @@ color13 = "#c6a0ff"
 color14 = "#89ddff"
 color15 = "#ffffff"
 
-rofi_width = 44
+rofi_width = 40
 rofi_padding = 12
 rofi_border_radius = 16
-rofi_lines = 8
+rofi_lines = 14
 rofi_icon_size = 24
 rofi_element_spacing = 8

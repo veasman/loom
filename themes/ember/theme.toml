@@ -1,6 +1,6 @@
 name = "ember"
-ui_mode = "dark"
 default_wallpaper = "default"
+ui_mode = "dark"
 
 font_ui = "FiraCode Nerd Font"
 font_mono = "FiraCode Nerd Font"
@@ -11,31 +11,44 @@ font_size_term = 13
 gap_px = 12
 border_width = 2
 default_mfact = 0.5
-
-bar_height = 24
-bar_outer_gap = 4
 sync_workspaces = true
-
 terminal_opacity = 0.95
 
 bg = "#16110f"
 bg_alt = "#1f1815"
-
 fg = "#f2e5d7"
 fg_muted = "#b59b85"
-
 accent = "#d97757"
+accent_soft = "#c28d73"
 accent_fg = "#16110f"
-
 border_active = "#d97757"
 border_inactive = "#5a4339"
-
 workspace_current = "#d97757"
 workspace_occupied = "#b59b85"
 workspace_empty = "#6a5449"
-
 selection_bg = "#7c3f2b"
 selection_fg = "#ffffff"
+
+vwm_bar_enabled = true
+vwm_bar_background = false
+vwm_bar_modules = "pill"
+vwm_bar_icons = true
+vwm_bar_colors = true
+vwm_bar_minimal = false
+vwm_bar_position = "top"
+vwm_bar_height = 24
+vwm_bar_radius = 12
+vwm_bar_margin_x = 8
+vwm_bar_margin_y = 6
+vwm_bar_content_margin_x = 8
+vwm_bar_content_margin_y = 2
+vwm_bar_gap = 14
+vwm_bar_padding_x = 10
+vwm_bar_padding_y = 4
+vwm_bar_volume_bar_enabled = true
+vwm_bar_volume_bar_width = 34
+vwm_bar_volume_bar_height = 8
+vwm_bar_volume_bar_radius = 4
 
 nvim_scheme = "reddish"
 nvim_variant = "dark"
@@ -79,9 +92,9 @@ color13 = "#e0a2b5"
 color14 = "#a2c89b"
 color15 = "#fff3e6"
 
-rofi_width = 44
+rofi_width = 40
 rofi_padding = 12
 rofi_border_radius = 12
-rofi_lines = 8
+rofi_lines = 14
 rofi_icon_size = 24
 rofi_element_spacing = 8

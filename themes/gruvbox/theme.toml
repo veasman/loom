@@ -1,6 +1,6 @@
 name = "gruvbox"
-ui_mode = "dark"
 default_wallpaper = "default"
+ui_mode = "dark"
 
 font_ui = "FiraCode Nerd Font"
 font_mono = "FiraCode Nerd Font"
@@ -11,31 +11,44 @@ font_size_term = 13
 gap_px = 10
 border_width = 2
 default_mfact = 0.5
-
-bar_height = 22
-bar_outer_gap = 0
 sync_workspaces = true
-
 terminal_opacity = 0.95
 
 bg = "#1d2021"
 bg_alt = "#282828"
-
 fg = "#ebdbb2"
 fg_muted = "#a89984"
-
 accent = "#d79921"
+accent_soft = "#b57614"
 accent_fg = "#1d2021"
-
 border_active = "#d79921"
 border_inactive = "#504945"
-
 workspace_current = "#d79921"
 workspace_occupied = "#a89984"
 workspace_empty = "#665c54"
-
 selection_bg = "#458588"
 selection_fg = "#fbf1c7"
+
+vwm_bar_enabled = true
+vwm_bar_background = true
+vwm_bar_modules = "flat"
+vwm_bar_icons = true
+vwm_bar_colors = false
+vwm_bar_minimal = true
+vwm_bar_position = "top"
+vwm_bar_height = 22
+vwm_bar_radius = 0
+vwm_bar_margin_x = 0
+vwm_bar_margin_y = 0
+vwm_bar_content_margin_x = 12
+vwm_bar_content_margin_y = 0
+vwm_bar_gap = 8
+vwm_bar_padding_x = 8
+vwm_bar_padding_y = 0
+vwm_bar_volume_bar_enabled = true
+vwm_bar_volume_bar_width = 28
+vwm_bar_volume_bar_height = 6
+vwm_bar_volume_bar_radius = 0
 
 nvim_scheme = "gruvbox"
 nvim_variant = "dark"
@@ -50,15 +63,15 @@ dunst_frame_width = 2
 dunst_timeout = 6
 
 picom_active_opacity = 1.0
-picom_inactive_opacity = 0.95
+picom_inactive_opacity = 1.0
 picom_corner_radius = 0
 picom_round_borders = 0
 picom_shadow = false
 picom_shadow_opacity = 0.0
 picom_shadow_offset_x = 0
 picom_shadow_offset_y = 0
-picom_fade_in_step = 1.00
-picom_fade_out_step = 1.00
+picom_fade_in_step = 1.0
+picom_fade_out_step = 1.0
 picom_fade_delta = 1
 
 color0 = "#282828"
@@ -82,6 +95,6 @@ color15 = "#ebdbb2"
 rofi_width = 40
 rofi_padding = 8
 rofi_border_radius = 0
-rofi_lines = 8
+rofi_lines = 14
 rofi_icon_size = 24
 rofi_element_spacing = 4

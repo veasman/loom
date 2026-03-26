@@ -74,14 +74,18 @@ def write_generated_files(theme: Theme) -> None:
     GTK4_SETTINGS_PATH.write_text(gtk_settings, encoding="utf-8")
 
 def notify_theme_applied(message: str) -> None:
-    subprocess.run(
-        [
-            "bash",
-            "-lc",
-            f'command -v notify-send >/dev/null 2>&1 && notify-send "Loom" {shlex.quote(message)} || true',
-        ],
-        check=False,
-    )
+    try:
+        subprocess.Popen(
+            ["notify-send", "Loom", message],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            stdin=subprocess.DEVNULL,
+            start_new_session=True,
+        )
+    except FileNotFoundError:
+        pass
+    except Exception:
+        pass
 
 
 def validate_themes() -> int:
@@ -119,17 +123,31 @@ def revert_preview() -> int:
     return result
 
 def reload_vwm() -> None:
-    subprocess.run(
-        ["bash", "-lc", 'pidof vwm >/dev/null && kill -HUP "$(pidof vwm)"'],
-        check=False,
-    )
+    try:
+        subprocess.run(
+            ["bash", "-lc", 'pidof vwm >/dev/null 2>&1 && kill -HUP "$(pidof vwm)" || true'],
+            check=False,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            stdin=subprocess.DEVNULL,
+            timeout=1.5,
+        )
+    except subprocess.TimeoutExpired:
+        pass
 
 
 def reload_kitty() -> None:
-    subprocess.run(
-        ["bash", "-lc", 'pidof kitty >/dev/null 2>&1 && pkill -USR1 -x kitty || true'],
-        check=False,
-    )
+    try:
+        subprocess.run(
+            ["bash", "-lc", 'pidof kitty >/dev/null 2>&1 && pkill -USR1 -x kitty || true'],
+            check=False,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            stdin=subprocess.DEVNULL,
+            timeout=1.5,
+        )
+    except subprocess.TimeoutExpired:
+        pass
 
 
 def reload_nvim_sessions() -> None:
@@ -185,27 +203,48 @@ def reload_nvim_sessions() -> None:
 
 
 def reload_dunst() -> None:
-    subprocess.run(
-        ["bash", "-lc", 'pidof dunst >/dev/null 2>&1 && pkill -HUP -x dunst || true'],
-        check=False,
-    )
+    try:
+        subprocess.run(
+            ["bash", "-lc", 'pidof dunst >/dev/null 2>&1 && pkill -HUP -x dunst || true'],
+            check=False,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            stdin=subprocess.DEVNULL,
+            timeout=1.5,
+        )
+    except subprocess.TimeoutExpired:
+        pass
 
 
 def reload_picom() -> None:
-    subprocess.run(
-        ["bash", "-lc", 'pidof picom >/dev/null 2>&1 && pkill -USR1 -x picom || true'],
-        check=False,
-    )
+    try:
+        subprocess.run(
+            ["bash", "-lc", 'pidof picom >/dev/null 2>&1 && pkill -USR1 -x picom || true'],
+            check=False,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            stdin=subprocess.DEVNULL,
+            timeout=1.5,
+        )
+    except subprocess.TimeoutExpired:
+        pass
 
 def reload_tmux() -> None:
-    subprocess.run(
-        [
-            "bash",
-            "-lc",
-            'tmux source-file ~/.local/state/loom/generated/tmux-theme.conf >/dev/null 2>&1 || true',
-        ],
-        check=False,
-    )
+    try:
+        subprocess.run(
+            [
+                "bash",
+                "-lc",
+                'tmux source-file ~/.local/state/loom/generated/tmux-theme.conf >/dev/null 2>&1 || true',
+            ],
+            check=False,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            stdin=subprocess.DEVNULL,
+            timeout=1.5,
+        )
+    except subprocess.TimeoutExpired:
+        pass
 
 def apply_runtime_reloads() -> None:
     reload_vwm()
@@ -226,13 +265,13 @@ def resolve_theme_wallpaper(theme: Theme) -> Path:
 def apply_theme(theme_name: str, wallpaper: Path | None = None) -> int:
     theme = load_theme(theme_name)
 
-    write_generated_files(theme)
-    write_current_theme(theme.name)
-
     if wallpaper is not None:
         set_theme_wallpaper(theme, wallpaper)
     else:
         set_theme_wallpaper(theme, resolve_theme_wallpaper(theme))
+
+    write_generated_files(theme)
+    write_current_theme(theme.name)
 
     apply_runtime_reloads()
     notify_theme_applied(f"Applied theme: {theme.name}")

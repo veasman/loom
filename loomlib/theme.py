@@ -27,8 +27,6 @@ class Theme:
     gap_px: int
     border_width: int
     default_mfact: float
-    bar_height: int
-    bar_outer_gap: int
     sync_workspaces: bool
     terminal_opacity: float
 
@@ -37,6 +35,7 @@ class Theme:
     fg: str
     fg_muted: str
     accent: str
+    accent_soft: str
     accent_fg: str
     border_active: str
     border_inactive: str
@@ -45,6 +44,27 @@ class Theme:
     workspace_empty: str
     selection_bg: str
     selection_fg: str
+
+    vwm_bar_enabled: bool
+    vwm_bar_background: bool
+    vwm_bar_modules: str
+    vwm_bar_icons: bool
+    vwm_bar_colors: bool
+    vwm_bar_minimal: bool
+    vwm_bar_position: str
+    vwm_bar_height: int
+    vwm_bar_radius: int
+    vwm_bar_margin_x: int
+    vwm_bar_margin_y: int
+    vwm_bar_content_margin_x: int
+    vwm_bar_content_margin_y: int
+    vwm_bar_gap: int
+    vwm_bar_padding_x: int
+    vwm_bar_padding_y: int
+    vwm_bar_volume_bar_enabled: bool
+    vwm_bar_volume_bar_width: int
+    vwm_bar_volume_bar_height: int
+    vwm_bar_volume_bar_radius: int
 
     nvim_scheme: str
     nvim_variant: str
@@ -167,8 +187,6 @@ REQUIRED_KEYS = {
     "gap_px",
     "border_width",
     "default_mfact",
-    "bar_height",
-    "bar_outer_gap",
     "sync_workspaces",
     "terminal_opacity",
     "bg",
@@ -176,6 +194,7 @@ REQUIRED_KEYS = {
     "fg",
     "fg_muted",
     "accent",
+    "accent_soft",
     "accent_fg",
     "border_active",
     "border_inactive",
@@ -184,6 +203,26 @@ REQUIRED_KEYS = {
     "workspace_empty",
     "selection_bg",
     "selection_fg",
+    "vwm_bar_enabled",
+    "vwm_bar_background",
+    "vwm_bar_modules",
+    "vwm_bar_icons",
+    "vwm_bar_colors",
+    "vwm_bar_minimal",
+    "vwm_bar_position",
+    "vwm_bar_height",
+    "vwm_bar_radius",
+    "vwm_bar_margin_x",
+    "vwm_bar_margin_y",
+    "vwm_bar_content_margin_x",
+    "vwm_bar_content_margin_y",
+    "vwm_bar_gap",
+    "vwm_bar_padding_x",
+    "vwm_bar_padding_y",
+    "vwm_bar_volume_bar_enabled",
+    "vwm_bar_volume_bar_width",
+    "vwm_bar_volume_bar_height",
+    "vwm_bar_volume_bar_radius",
     "nvim_scheme",
     "nvim_variant",
     "nvim_transparent",
@@ -293,8 +332,6 @@ def load_theme(theme_name: str) -> Theme:
         gap_px=int(data["gap_px"]),
         border_width=int(data["border_width"]),
         default_mfact=float(data["default_mfact"]),
-        bar_height=int(data["bar_height"]),
-        bar_outer_gap=int(data["bar_outer_gap"]),
         sync_workspaces=bool(data["sync_workspaces"]),
         terminal_opacity=float(data["terminal_opacity"]),
         bg=data["bg"],
@@ -302,6 +339,7 @@ def load_theme(theme_name: str) -> Theme:
         fg=data["fg"],
         fg_muted=data["fg_muted"],
         accent=data["accent"],
+        accent_soft=data["accent_soft"],
         accent_fg=data["accent_fg"],
         border_active=data["border_active"],
         border_inactive=data["border_inactive"],
@@ -310,6 +348,26 @@ def load_theme(theme_name: str) -> Theme:
         workspace_empty=data["workspace_empty"],
         selection_bg=data["selection_bg"],
         selection_fg=data["selection_fg"],
+        vwm_bar_enabled=bool(data["vwm_bar_enabled"]),
+        vwm_bar_background=bool(data["vwm_bar_background"]),
+        vwm_bar_modules=data["vwm_bar_modules"],
+        vwm_bar_icons=bool(data["vwm_bar_icons"]),
+        vwm_bar_colors=bool(data["vwm_bar_colors"]),
+        vwm_bar_minimal=bool(data["vwm_bar_minimal"]),
+        vwm_bar_position=data["vwm_bar_position"],
+        vwm_bar_height=int(data["vwm_bar_height"]),
+        vwm_bar_radius=int(data["vwm_bar_radius"]),
+        vwm_bar_margin_x=int(data["vwm_bar_margin_x"]),
+        vwm_bar_margin_y=int(data["vwm_bar_margin_y"]),
+        vwm_bar_content_margin_x=int(data["vwm_bar_content_margin_x"]),
+        vwm_bar_content_margin_y=int(data["vwm_bar_content_margin_y"]),
+        vwm_bar_gap=int(data["vwm_bar_gap"]),
+        vwm_bar_padding_x=int(data["vwm_bar_padding_x"]),
+        vwm_bar_padding_y=int(data["vwm_bar_padding_y"]),
+        vwm_bar_volume_bar_enabled=bool(data["vwm_bar_volume_bar_enabled"]),
+        vwm_bar_volume_bar_width=int(data["vwm_bar_volume_bar_width"]),
+        vwm_bar_volume_bar_height=int(data["vwm_bar_volume_bar_height"]),
+        vwm_bar_volume_bar_radius=int(data["vwm_bar_volume_bar_radius"]),
         nvim_scheme=data["nvim_scheme"],
         nvim_variant=data["nvim_variant"],
         nvim_transparent=bool(data["nvim_transparent"]),

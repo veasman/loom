@@ -17,6 +17,7 @@ from loomlib.paths import (
     TMUX_THEME_PATH,
     VWM_THEME_PATH,
 )
+from loomlib.renderers import render_vwm_theme
 from loomlib.theme import IMAGE_EXTENSIONS, load_theme, list_theme_names
 
 HEX_RE = re.compile(r"^#[0-9a-fA-F]{6}$")
@@ -50,7 +51,7 @@ def validate_theme(theme_name: str) -> list[str]:
         errors.append(f"{theme_name}: directory name and theme name do not match")
 
     for key in [
-        "bg", "bg_alt", "fg", "fg_muted", "accent", "accent_fg",
+        "bg", "bg_alt", "fg", "fg_muted", "accent", "accent_soft", "accent_fg",
         "border_active", "border_inactive", "workspace_current",
         "workspace_occupied", "workspace_empty", "selection_bg", "selection_fg",
         "color0", "color1", "color2", "color3", "color4", "color5", "color6", "color7",
@@ -60,6 +61,48 @@ def validate_theme(theme_name: str) -> list[str]:
 
     if theme.ui_mode not in {"light", "dark"}:
         errors.append(f"{theme_name}: ui_mode must be 'light' or 'dark'")
+
+    if theme.vwm_bar_modules not in {"flat", "pill"}:
+        errors.append(f"{theme_name}: vwm_bar_modules must be 'flat' or 'pill'")
+
+    if theme.vwm_bar_position not in {"top", "bottom"}:
+        errors.append(f"{theme_name}: vwm_bar_position must be 'top' or 'bottom'")
+
+    if theme.vwm_bar_height <= 0:
+        errors.append(f"{theme_name}: vwm_bar_height must be > 0")
+
+    if theme.vwm_bar_radius < 0:
+        errors.append(f"{theme_name}: vwm_bar_radius must be >= 0")
+
+    if theme.vwm_bar_margin_x < 0:
+        errors.append(f"{theme_name}: vwm_bar_margin_x must be >= 0")
+
+    if theme.vwm_bar_margin_y < 0:
+        errors.append(f"{theme_name}: vwm_bar_margin_y must be >= 0")
+
+    if theme.vwm_bar_content_margin_x < 0:
+        errors.append(f"{theme_name}: vwm_bar_content_margin_x must be >= 0")
+
+    if theme.vwm_bar_content_margin_y < 0:
+        errors.append(f"{theme_name}: vwm_bar_content_margin_y must be >= 0")
+
+    if theme.vwm_bar_gap < 0:
+        errors.append(f"{theme_name}: vwm_bar_gap must be >= 0")
+
+    if theme.vwm_bar_padding_x < 0:
+        errors.append(f"{theme_name}: vwm_bar_padding_x must be >= 0")
+
+    if theme.vwm_bar_padding_y < 0:
+        errors.append(f"{theme_name}: vwm_bar_padding_y must be >= 0")
+
+    if theme.vwm_bar_volume_bar_width < 0:
+        errors.append(f"{theme_name}: vwm_bar_volume_bar_width must be >= 0")
+
+    if theme.vwm_bar_volume_bar_height < 0:
+        errors.append(f"{theme_name}: vwm_bar_volume_bar_height must be >= 0")
+
+    if theme.vwm_bar_volume_bar_radius < 0:
+        errors.append(f"{theme_name}: vwm_bar_volume_bar_radius must be >= 0")
 
     if not theme.wallpapers_dir.is_dir():
         errors.append(f"{theme_name}: wallpapers directory missing")
@@ -110,11 +153,19 @@ def validate_theme(theme_name: str) -> list[str]:
     if theme.gap_px < 0:
         errors.append(f"{theme_name}: gap_px must be >= 0")
 
-    if theme.bar_height <= 0:
-        errors.append(f"{theme_name}: bar_height must be > 0")
-
     if theme.font_size_ui <= 0 or theme.font_size_term <= 0:
         errors.append(f"{theme_name}: font sizes must be > 0")
+
+    try:
+        rendered_vwm = render_vwm_theme(theme)
+        if "general {" not in rendered_vwm:
+            errors.append(f"{theme_name}: generated vwm theme missing general block")
+        if "theme {" not in rendered_vwm:
+            errors.append(f"{theme_name}: generated vwm theme missing theme block")
+        if "bar {" not in rendered_vwm:
+            errors.append(f"{theme_name}: generated vwm theme missing bar block")
+    except Exception as e:
+        errors.append(f"{theme_name}: failed to render vwm theme: {e}")
 
     return errors
 

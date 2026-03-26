@@ -19,7 +19,18 @@ def set_wallpaper(path: Path) -> None:
     CURRENT_WALLPAPER_LINK.unlink(missing_ok=True)
     CURRENT_WALLPAPER_LINK.symlink_to(path)
 
-    subprocess.run(["xwallpaper", "--zoom", str(path)], check=True)
+    try:
+        subprocess.run(
+            ["xwallpaper", "--zoom", str(path)],
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            stdin=subprocess.DEVNULL,
+            timeout=3.0,
+        )
+    except subprocess.TimeoutExpired as e:
+        raise RuntimeError("xwallpaper timed out") from e
+
     write_current_wallpaper(path)
 
 

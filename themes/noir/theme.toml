@@ -1,6 +1,6 @@
 name = "noir"
-ui_mode = "dark"
 default_wallpaper = "default"
+ui_mode = "dark"
 
 font_ui = "FiraCode Nerd Font"
 font_mono = "FiraCode Nerd Font"
@@ -11,34 +11,47 @@ font_size_term = 13
 gap_px = 10
 border_width = 0
 default_mfact = 0.5
-
-bar_height = 22
-bar_outer_gap = 10
 sync_workspaces = true
-
-terminal_opacity = 0.90
+terminal_opacity = 0.92
 
 bg = "#141415"
 bg_alt = "#1a1a1c"
-
 fg = "#cdcdcd"
 fg_muted = "#606079"
-
 accent = "#8aa6ff"
+accent_soft = "#6f82c8"
 accent_fg = "#141415"
-
 border_active = "#8aa6ff"
 border_inactive = "#2a2a2e"
-
 workspace_current = "#8aa6ff"
 workspace_occupied = "#8b8ba7"
 workspace_empty = "#4b4b57"
-
 selection_bg = "#2a2d40"
 selection_fg = "#ffffff"
 
+vwm_bar_enabled = true
+vwm_bar_background = false
+vwm_bar_modules = "pill"
+vwm_bar_icons = true
+vwm_bar_colors = false
+vwm_bar_minimal = false
+vwm_bar_position = "top"
+vwm_bar_height = 22
+vwm_bar_radius = 8
+vwm_bar_margin_x = 10
+vwm_bar_margin_y = 10
+vwm_bar_content_margin_x = 8
+vwm_bar_content_margin_y = 0
+vwm_bar_gap = 12
+vwm_bar_padding_x = 12
+vwm_bar_padding_y = 0
+vwm_bar_volume_bar_enabled = true
+vwm_bar_volume_bar_width = 32
+vwm_bar_volume_bar_height = 7
+vwm_bar_volume_bar_radius = 3
+
 nvim_scheme = "vague"
-nvim_variant = "dark"
+nvim_variant = "main"
 nvim_transparent = true
 
 dunst_corner_radius = 2
@@ -57,8 +70,8 @@ picom_shadow = true
 picom_shadow_opacity = 0.25
 picom_shadow_offset_x = -15
 picom_shadow_offset_y = -15
-picom_fade_in_step = 1.00
-picom_fade_out_step = 1.00
+picom_fade_in_step = 1.0
+picom_fade_out_step = 1.0
 picom_fade_delta = 1
 
 color0 = "#141415"
@@ -82,6 +95,6 @@ color15 = "#ffffff"
 rofi_width = 40
 rofi_padding = 8
 rofi_border_radius = 0
-rofi_lines = 8
+rofi_lines = 14
 rofi_icon_size = 24
 rofi_element_spacing = 4
