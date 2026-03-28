@@ -37,9 +37,9 @@ vwm_bar_colors = true
 vwm_bar_minimal = false
 vwm_bar_position = "top"
 vwm_bar_height = 24
-vwm_bar_radius = 12
+vwm_bar_radius = 14
 vwm_bar_margin_x = 8
-vwm_bar_margin_y = 6
+vwm_bar_margin_y = 12
 vwm_bar_content_margin_x = 8
 vwm_bar_content_margin_y = 2
 vwm_bar_gap = 14
@@ -48,13 +48,13 @@ vwm_bar_padding_y = 4
 vwm_bar_volume_bar_enabled = true
 vwm_bar_volume_bar_width = 34
 vwm_bar_volume_bar_height = 8
-vwm_bar_volume_bar_radius = 4
+vwm_bar_volume_bar_radius = 6
 
 nvim_scheme = "reddish"
 nvim_variant = "dark"
 nvim_transparent = true
 
-dunst_corner_radius = 12
+dunst_corner_radius = 8
 dunst_width = 360
 dunst_height = 120
 dunst_offset_x = 20
@@ -64,7 +64,7 @@ dunst_timeout = 6
 
 picom_active_opacity = 1.0
 picom_inactive_opacity = 0.90
-picom_corner_radius = 12
+picom_corner_radius = 8
 picom_round_borders = 1
 picom_shadow = true
 picom_shadow_opacity = 0.30
@@ -93,8 +93,8 @@ color14 = "#a2c89b"
 color15 = "#fff3e6"
 
 rofi_width = 40
-rofi_padding = 12
-rofi_border_radius = 12
+rofi_padding = 8
+rofi_border_radius = 6
 rofi_lines = 14
 rofi_icon_size = 24
 rofi_element_spacing = 8
