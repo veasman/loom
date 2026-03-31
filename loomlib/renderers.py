@@ -283,5 +283,6 @@ def render_gtk_settings(theme: Theme) -> str:
     prefer_dark = "1" if theme.ui_mode == "dark" else "0"
     return f"""[Settings]
 gtk-theme-name={gtk_theme}
+gtk-icon-theme-name=Adwaita
 gtk-application-prefer-dark-theme={prefer_dark}
 """
