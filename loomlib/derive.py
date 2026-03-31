@@ -295,6 +295,7 @@ picom_shadow_offset_y = -10
 picom_fade_in_step = 0.05
 picom_fade_out_step = 0.05
 picom_fade_delta = 4
+picom_blur_enabled = true
 
 color0 = "{palette["color0"]}"
 color1 = "{palette["color1"]}"

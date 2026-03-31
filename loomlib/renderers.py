@@ -209,6 +209,8 @@ active-opacity = {theme.picom_active_opacity};
 inactive-opacity = {theme.picom_inactive_opacity};
 frame-opacity = 1.0;
 
+use-damage = false;
+
 fading = true;
 fade-in-step = {theme.picom_fade_in_step};
 fade-out-step = {theme.picom_fade_out_step};
@@ -227,6 +229,15 @@ wintypes:
   popup_menu = {{ opacity = 1.0; }};
   dropdown_menu = {{ opacity = 1.0; }};
 }};
+
+blur:
+{{
+  method = "{"gaussian" if theme.picom_blur_enabled else "none"}";
+  size = 2;
+  deviation = 5.0;
+  strength = 2;
+}};
+
 """
 
 

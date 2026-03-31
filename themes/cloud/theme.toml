@@ -59,7 +59,7 @@ dunst_width = 380
 dunst_height = 130
 dunst_offset_x = 24
 dunst_offset_y = 24
-dunst_frame_width = 2
+dunst_frame_width = 1
 dunst_timeout = 6
 
 picom_active_opacity = 1.0
@@ -73,6 +73,7 @@ picom_shadow_offset_y = -10
 picom_fade_in_step = 0.05
 picom_fade_out_step = 0.05
 picom_fade_delta = 4
+picom_blur_enabled = true
 
 color0 = "#dbe7f0"
 color1 = "#d08770"

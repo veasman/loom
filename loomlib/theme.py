@@ -96,6 +96,7 @@ class Theme:
     picom_fade_in_step: float
     picom_fade_out_step: float
     picom_fade_delta: int
+    picom_blur_enabled: bool
 
     color0: str
     color1: str
@@ -250,6 +251,7 @@ REQUIRED_KEYS = {
     "picom_fade_in_step",
     "picom_fade_out_step",
     "picom_fade_delta",
+    "picom_blur_enabled",
     "color0",
     "color1",
     "color2",
@@ -395,6 +397,7 @@ def load_theme(theme_name: str) -> Theme:
         picom_fade_in_step=float(data["picom_fade_in_step"]),
         picom_fade_out_step=float(data["picom_fade_out_step"]),
         picom_fade_delta=int(data["picom_fade_delta"]),
+        picom_blur_enabled=bool(data["picom_blur_enabled"]),
         color0=data["color0"],
         color1=data["color1"],
         color2=data["color2"],
