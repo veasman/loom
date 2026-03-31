@@ -4,6 +4,7 @@ import argparse
 import glob
 import subprocess
 import shlex
+import os
 from pathlib import Path
 
 from loomlib.menu import (
@@ -56,6 +57,35 @@ from loomlib.state import (
 from loomlib.theme import Theme, list_theme_names, load_theme
 from loomlib.wallpaper import set_default_wallpaper, set_theme_wallpaper, set_wallpaper
 
+
+def _dbus_env() -> dict[str, str]:
+    env = dict(os.environ)
+
+    try:
+        result = subprocess.run(
+            ["tmux", "show-environment"],
+            check=False,
+            capture_output=True,
+            text=True,
+            timeout=1.5,
+        )
+        if result.returncode == 0:
+            for line in result.stdout.splitlines():
+                if not line or line.startswith("-") or "=" not in line:
+                    continue
+                key, value = line.split("=", 1)
+                if key in {
+                    "DBUS_SESSION_BUS_ADDRESS",
+                    "DISPLAY",
+                    "XAUTHORITY",
+                    "XDG_CURRENT_DESKTOP",
+                    "XDG_RUNTIME_DIR",
+                }:
+                    env[key] = value
+    except Exception:
+        pass
+
+    return env
 
 def write_generated_files(theme: Theme) -> None:
     ensure_runtime_dirs()
@@ -121,6 +151,35 @@ def revert_preview() -> int:
     result = apply_theme(prev_theme, wallpaper=prev_wallpaper)
     clear_preview_state()
     return result
+
+
+def sync_desktop_appearance(theme: Theme) -> None:
+    color_scheme = "prefer-dark" if theme.ui_mode == "dark" else "prefer-light"
+    gtk_theme = "Adwaita-dark" if theme.ui_mode == "dark" else "Adwaita"
+    icon_theme = "Adwaita"
+
+    env = _dbus_env()
+
+    commands = [
+        ["gsettings", "set", "org.gnome.desktop.interface", "color-scheme", color_scheme],
+        ["gsettings", "set", "org.gnome.desktop.interface", "gtk-theme", gtk_theme],
+        ["gsettings", "set", "org.gnome.desktop.interface", "icon-theme", icon_theme],
+    ]
+
+    for cmd in commands:
+        try:
+            subprocess.run(
+                cmd,
+                check=False,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                stdin=subprocess.DEVNULL,
+                timeout=1.5,
+                env=env,
+            )
+        except (FileNotFoundError, subprocess.TimeoutExpired):
+            continue
+
 
 def reload_vwm() -> None:
     try:
@@ -271,6 +330,7 @@ def apply_theme(theme_name: str, wallpaper: Path | None = None) -> int:
         set_theme_wallpaper(theme, resolve_theme_wallpaper(theme))
 
     write_generated_files(theme)
+    sync_desktop_appearance(theme)
     write_current_theme(theme.name)
 
     apply_runtime_reloads()
@@ -283,17 +343,17 @@ def apply_theme(theme_name: str, wallpaper: Path | None = None) -> int:
 def apply_theme_with_picker(theme_name: str) -> int:
     theme = load_theme(theme_name)
 
-    write_generated_files(theme)
-    write_current_theme(theme.name)
-
-    # Apply theme first so wallpaper choice happens in the real final theme context.
-    apply_runtime_reloads()
-
     chosen = choose_wallpaper(theme, original_wallpaper=read_current_wallpaper())
     if chosen is not None:
         set_theme_wallpaper(theme, chosen)
     else:
         set_theme_wallpaper(theme, resolve_theme_wallpaper(theme))
+
+    write_generated_files(theme)
+    sync_desktop_appearance(theme)
+    write_current_theme(theme.name)
+
+    apply_runtime_reloads()
 
     notify_theme_applied(f"Applied theme: {theme.name}")
     print(f"applied theme: {theme.name}")
